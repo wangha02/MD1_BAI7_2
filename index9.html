@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            position: absolute;
+            left: 150px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>
+    Chuong trinh tinh lai suat ngan hang <br>
+</h1>
+
+Nhap so tien gui <input type="text" id="soTien">
+<br><br>
+Nhap so thang <input type="text" id="soThang">
+<br><br>
+Nhap lai suat % <input type="text" id="laiSuat">
+<br><br>
+<button onclick="tinh()">Tinh</button>
+<br><br>
+<p id="result"></p>
+
+<script>
+    function tinh() {
+        let soTien = +document.getElementById('soTien').value;
+        let soThang = +document.getElementById('soThang').value;
+        let laiSuat = (+document.getElementById('laiSuat').value) / 100;
+
+        let lai = soTien * Math.pow((1 + laiSuat),soThang);
+
+        document.getElementById('result').innerText = 'So tien sau ' + soThang + ' thang la: ' + lai;
+    }
+</script>
+
+</body>
+</html>

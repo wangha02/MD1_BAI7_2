@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<p>ax+b=c</p>
+
+<input type="text" id="a"> x + <input type="text" id="b"> = 0 &nbsp; <button onclick="tinh()">Tinh</button>
+
+<p id="result"></p>
+
+<script>
+
+    function tinh() {
+        let a = +document.getElementById('a').value;
+        let b = +document.getElementById('b').value;
+        if (!a) {
+            if(b){
+                document.getElementById('result').innerText = 'Phuong trinh vo nghiem';
+            } else {
+                document.getElementById('result').innerText = 'Phuong trinh vo so nghiem';
+            }
+        } else {
+            document.getElementById('result').innerText = 'Phuong trinh co nghiem la: ' + ( - b / a);
+        }
+    }
+
+</script>
+
+</body>
+</html>

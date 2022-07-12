@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        sub {
+            vertical-align: super;
+            font-size: 10px;
+        }
+
+        input {
+            width: 35px;
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" id="a"> x<sub>2</sub> + <input type="text" id="b"> x + <input type="text" id="c"> = 0 &nbsp;
+<button onclick="tinh()">Tinh</button>
+
+<p id="result"></p>
+
+<script>
+
+    function tinh() {
+        let a = +document.getElementById('a').value;
+        let b = +document.getElementById('b').value;
+        let c = +document.getElementById('c').value;
+
+        let delta = b * b - 4 * a * c;
+        console.log('delta1 = ' + delta);
+        if (delta < 0) {
+            document.getElementById('result').innerText = 'Phuong trinh vo nghiem';
+        } else if (delta == 0) {
+            console.log(delta);
+            let x = -b / (2 * a);
+            document.getElementById('result').innerText = 'Phuong trinh co nghiem kep: x = ' + x;
+        } else {
+            console.log(delta);
+            let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+            document.getElementById('result').innerText = 'Phuong trinh co 2 nghiem: x1 = ' + x1 + ', x2 = ' + x2;
+        }
+    }
+
+</script>
+
+</body>
+</html>
